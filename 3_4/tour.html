@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .top,
+        .bottom {
+            width: 100%;
+            height: 50px;
+            background-color: #0168B7;
+        }
+        
+        ul {
+            /*取消小圆点*/
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav {
+            /*设置弹性盒子*/
+            display: flex;
+        }
+        
+        .top {
+            position: fixed;
+            top: 0;
+            justify-content: space-between;
+        }
+        
+        .top li {
+            flex: auto;
+        }
+        
+        .top a {
+            /*a标签去除下划线*/
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: "微软雅黑";
+            display: block;
+            padding: 0 20px;
+            line-height: 50px;
+            text-align: center;
+        }
+        /*悬停在top时的样式*/
+        
+        .nav a:hover {
+            color: #0168B7;
+            background-color: #FEBE00;
+        }
+        /*二级菜单背景颜色*/
+        
+        .top .sub {
+            background-color: #FEBE00;
+        }
+        
+        .sub a {
+            display: block;
+            line-height: 50px;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        
+        .top ul li ul li {
+            display: none;
+            /* 隐藏二级菜单 */
+        }
+        
+        .top ul li:hover ul li {
+            /* 鼠标经过时显示二级菜单 */
+            display: block;
+            /* 二级菜单转化为块级元素,使其独占一行 */
+        }
+        
+        .top ul li:hover {
+            background-color: #FEBE00;
+            /* 鼠标经过时显示的背景颜色 */
+        }
+        
+        .center {
+            width: 85%;
+            height: auto;
+            margin: 50px auto 0;
+        }
+        /*实现左右对齐布局*/
+        
+        .center_top {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .center_top li:last-child {
+            text-align: right;
+        }
+        
+        .center_img {
+            /*一行四张图片*/
+            column-count: 4;
+            /*每张间隔4px*/
+            column-gap: 4px;
+        }
+        
+        .center_img img {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 10px rgb(51, 50, 50);
+        }
+        
+        .center_img img:after {
+            content: attr(title);
+            display: block;
+            text-align: center;
+        }
+        
+        .center_img a {
+            text-decoration: none;
+            font-size: 12px;
+            text-align: center;
+            display: block;
+        }
+        
+        .bottom {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="top">
+            <ul class="nav">
+                <li>
+                    <a href="">首页</a>
+                </li>
+                <li>
+                    <a href="">百变自由行</a>
+                    <ul class="sub">
+                        <li><a href="">旅行</a></li>
+                        <li><a href="">评论</a></li>
+                        <li><a href="">@我</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">亲子旅行</a>
+                    <ul class="sub">
+                        <li><a href="">旅行</a></li>
+                        <li><a href="">评论</a></li>
+                        <li><a href="">@我</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">户外旅行</a>
+                    <ul class="sub">
+                        <li><a href="">旅行</a></li>
+                        <li><a href="">评论</a></li>
+                        <li><a href="">@我</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">高端旅行</a>
+                    <ul class="sub">
+                        <li><a href="">旅行</a></li>
+                        <li><a href="">评论</a></li>
+                        <li><a href="">@我</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">定制旅行</a>
+                    <ul class="sub">
+                        <li><a href="">旅行</a></li>
+                        <li><a href="">评论</a></li>
+                        <li><a href="">@我</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">景点介绍</a>
+                    <ul class="sub">
+                        <li><a href="">旅行</a></li>
+                        <li><a href="">评论</a></li>
+                        <li><a href="">@我</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="center">
+            <ul class="center_top">
+                <li>
+                    <h4>坎缇尼博物馆附近的旅游景点</h4>
+                </li>
+                <li><a href="" id="a">换一批</a></li>
+            </ul>
+            <ul class="center_img">
+                <li><img src="img/蒙多.png" alt="热门图片" title="蒙多1">
+                    <div><a href="">蒙多1</a></div>
+                </li>
+                <li><img src="img/wy.jpg" alt="热门图片" title="wy1">
+                    <div><a href="">wy1</a></div>
+                </li>
+                <li><img src="img/蒙多.png" alt="热门图片" title="蒙多2">
+                    <div><a href="">蒙多2</a></div>
+                </li>
+                <li><img src="img/wy.jpg" alt="热门图片" title="wy2">
+                    <div><a href="">wy2</a></div>
+                </li>
+                <li><img src="img/wy.jpg" alt="热门图片" title="wy2">
+                    <div><a href="">wy2</a></div>
+                </li>
+                <li><img src="img/wy.jpg" alt="热门图片" title="wy2">
+                    <div><a href="">wy2</a></div>
+                </li>
+                <li><img src="img/wy.jpg" alt="热门图片" title="wy2">
+                    <div><a href="">wy2</a></div>
+                </li>
+                <li><img src="img/wy.jpg" alt="热门图片" title="wy2">
+                    <div><a href="">wy2</a></div>
+                </li>
+                <li><img src="img/蒙多.png" alt="热门图片" title="蒙多1">
+                    <div><a href="">蒙多1</a></div>
+                </li>
+                <li><img src="img/wy.jpg" alt="热门图片" title="wy1">
+                    <div><a href="">wy1</a></div>
+                </li>
+                <li><img src="img/蒙多.png" alt="热门图片" title="蒙多1">
+                    <div><a href="">蒙多1</a></div>
+                </li>
+                <li><img src="img/wy.jpg" alt="热门图片" title="wy1">
+                    <div><a href="">wy1</a></div>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom">
+            <div class="title">版权所有 © XX旅行社</div>
+        </div>
+    </div>
+    <script>
+        let a = document.getElementById('a');
+        a.onclick = () => {
+            console.log('ssss');
+            let imgList = document.querySelector('.center_img');
+
+            imgList.innerHTML = `
+            <li>
+                <img src="img/wy.jpg" alt="热门图片" title="wy4">
+                <a href="#">wy4</a>
+            </li>
+            <li>
+                <img src="img/wy.jpg" alt="热门图片" title="wy4">
+                <a href="#">wy4</a>
+            </li><li>
+                <img src="img/wy.jpg" alt="热门图片" title="wy4">
+                <a href="#">wy4</a>
+            </li><li>
+                <img src="img/wy.jpg" alt="热门图片" title="wy4">
+                <a href="#">wy4</a>
+            </li>
+            <li>
+                <img src="img/wy.jpg" alt="热门图片" title="wy4">
+                <a href="#">wy4</a>
+            </li>
+            <li>
+                <img src="img/wy.jpg" alt="热门图片" title="wy4">
+                <a href="#">wy4</a>
+            </li>
+            <li>
+                <img src="img/wy.jpg" alt="热门图片" title="wy4">
+                <a href="#">wy4</a>
+            </li>
+            <li>
+                <img src="img/wy.jpg" alt="热门图片" title="wy4">
+                <a href="#">wy4</a>
+            </li>
+            <li>
+                <img src="img/wy.jpg" alt="热门图片" title="wy4">
+                <a href="#">wy4</a>
+            </li>
+            <li>
+                <img src="img/wy.jpg" alt="热门图片" title="wy4">
+                <a href="#">wy4</a>
+            </li>
+            <li>
+                <img src="img/wy.jpg" alt="热门图片" title="wy4">
+                <a href="#">wy4</a>
+            </li>
+            <li>
+                <img src="img/wy.jpg" alt="热门图片" title="wy4">
+                <a href="#">wy4</a>
+            </li>
+            `
+            return false;
+        }
+    </script>
+</body>
+
+</html>

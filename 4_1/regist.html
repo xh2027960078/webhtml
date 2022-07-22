@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css\style.css" type="text/css" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="nav_head">
+            <a href="#">&lt;</a>
+            <h6>注册</h6>
+        </div>
+        <div class="center">
+            <form>
+                <div class="form_control">
+                    <span>用户名</span>
+                    <input type="text" placeholder="zhangsan" v-model="userName">
+                </div>
+                <div class="form_control">
+                    <span>验证码</span>
+                    <input type="text" placeholder="135246" v-model="captcha">
+                    <a href="#" @click="buildCaptcha">获取验证码</a>
+                </div>
+                <div class="form_control">
+                    <span>密码</span>
+                    <input type="password" placeholder="请输入密码" v-model="pwd">
+                    <img src="img\眼睛 闭.png" alt="">
+                </div>
+                <div class="footer">
+                    <div>
+                        <input type="checkbox">
+                        <a href="#" @click="agreement">同意相关协议？</a>
+                    </div>
+                    <a href="#" @click="valid">注册</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+<script src="js\vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            userName: '',
+            captcha: '',
+            pwd: '',
+        },
+        methods: {
+            valid() {
+                let success = true;
+                // 英文字母开头，十位以上数字、字母、下划线组成
+                let reg = /^[a-zA-Z]\w{9,}$/;
+                if (!reg.test(this.userName)) {
+                    alert('用户名不符合要求');
+                    success = false;
+                }
+
+                reg = /(?!^(\d+|[a-zA-Z]+|[~!@#$%^&amp;*?]+)^[\w~!@#$%^&amp;*?])/;
+                if (this.pwd.length < 6 || !reg.test(this.pwd)) {
+                    alert('密码不符合要求');
+                    success = false;
+                }
+
+                if (success) {
+                    alert('注册成功');
+                } else {
+                    alert('注册失败');
+                }
+            },
+            buildCaptcha() {
+                let chars = parseInt(Math.random() * 100000);
+                chars = chars.toString().padStart(5, '0');
+                this.captcha = chars;
+            },
+            agreement() {
+                alert('各种协议');
+            },
+            eyes() {
+
+            }
+        }
+    })
+</script>
+
+</html>

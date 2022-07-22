@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>试驾</title>
+    <link href="css\style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="top">
+        <a class="log" href="#">
+            <img src="img\logo1.jpg" alt="">
+        </a>
+        <ul class="nav">
+            <li><a href="#">车型总览</a></li>
+            <li><a href="#">关于玛萨拉蒂</a></li>
+            <li><a href="#">预约试驾</a></li>
+            <li><a href="#">多媒体内容</a></li>
+            <li><a href="#">我们的服务</a></li>
+            <li><a href="#">汽车配置</a></li>
+        </ul>
+    </div>
+    <div class="center">
+        <div class="c_img"><img src="img\hybrid.jpg"></div>
+        <form class="c_form" action="">
+            <div class="title">预约试驾</div>
+            <div class="car_form">
+                <label>
+                    <span>选择车型</span>
+                    <!-- 下拉列表 -->
+                    <select name="">
+                        <option value="">玛萨拉蒂Hybird</option>
+                        <option value="">玛萨拉蒂MC20</option>
+                        <option value="">玛萨拉蒂Ghibli</option>
+                    </select>
+                </label>
+                <label>
+                    <span>姓名</span>
+                    <input type="text">
+                </label>
+                <label>
+                    <span>居住地址</span>
+                    <!-- 下拉列表 -->
+                    <select name="province">
+                        <option value="">湖南省</option>
+                        <option value="">江西省</option>
+                    </select>
+                    <select name="city">
+                        <option value="">长沙市</option>
+                        <option value="">株洲市</option>
+                        <option value="">湘潭市</option>
+                    </select>
+                </label>
+                <label>
+                        <span>称谓</span>
+                        <input type="radio" name="nl" value="male">先生
+                        <input type="radio" name="nl" value="famale">女士
+                </label>
+                <label>
+                    <span>选择经销商</span>
+                    <!-- 下拉列表 -->
+                    <select name="">
+                        <option value="">上海经销商</option>
+                        <option value="">北京经销商</option>
+                    </select>
+                </label>
+                <label>
+                    <span>手机号</span>
+                    <input type="text">
+                </label>
+                <label class="last">
+                    <input type="checkbox" name="">
+                    我已阅读并同意某某协议
+                    <button>提交预约</button>
+                </label>
+            </div>
+        </form>
+    </div>
+    <div class="bottom">版权所有</div>
+    <script>
+        // 获取选择框
+        let province = document.querySelector('[name=province]');
+        let city = document.querySelector('[name=city]');
+
+        province.onchange = () => {
+            let index = province.selectedIndex;
+            if (index == 0) {
+                city.innerHTML =
+                    `
+                <option value="">长沙市</option>
+                <option value="">株洲市</option>
+                <option value="">湘潭市</option>
+                `;
+            } else {
+                city.innerHTML =
+                    `
+                <option value="">南昌市</option>
+                <option value="">萍乡市</option>
+                <option value="">九江市</option>
+                `
+            }
+        }
+    </script>
+</body>
+
+</html>

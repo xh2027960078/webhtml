@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css\style.css" type="text/css" rel="stylesheet">
+    <title>登陆</title>
+</head>
+
+
+<body>
+    <div id="app">
+        <div class="head">
+            <img src="img\地球.png" alt="">
+            <span>在校打卡</span>
+        </div>
+        <form accept="">
+            <input type="text" placeholder="邮箱号" v-model="email" @blur="validemail">
+            <input type="text" placeholder="请输入密码" v-model="pwd" @blur="validpwd">
+            <a href="#" @click="mima">忘记密码？</a>
+            <button @click="valid" type="button">登陆</button>
+        </form>
+    </div>
+</body>
+<script src="js\vue.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            email: '',
+            pwd: '',
+        },
+        methods: {
+            validemail() {
+                // 非下划线的单词字符 + 2个以上单词字符 + @ + 2位以上单词字符域名 + .2位以上小写字母做域名后缀 + (.2位以上二重域名后缀)
+                let reg = /^([a-zA-Z\d][\w-]{2,})@(\w{2,})\.([a-z]{2,})(\.[a-z]{2,})?$/
+                if (!reg.test(this.email)) {
+                    alert('邮箱格式不符合要求');
+                    return false;
+                } else {
+                    return true;
+                }
+            },
+            validpwd() {
+                reg = /(?!^(\d+|[a-zA-Z]+|[~!@#$%^&amp;*?]+)^[\w~!@#$%^&amp;*?])/;
+                if (this.pwd.length < 6 || !reg.test(this.pwd)) {
+                    alert('密码不符合要求');
+                    return false;
+                } else {
+                    return true;
+                }
+            },
+            valid() {
+                if (!this.validemail() || !this.validpwd()) {
+                    alert('登录失败');
+                    return false;
+                } else {
+                    alert('登录成功');
+                    return true;
+                }
+            },
+            mima() {
+                alert('密码为xuhui666');
+            }
+        }
+    })
+</script>
+
+</html>

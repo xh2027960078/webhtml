@@ -1,0 +1,85 @@
+.nav_head {
+    position: relative;
+    background-color: #eee;
+    height: 60px;
+}
+
+.nav_head a {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    /* 去除超链接下划线 */
+    text-decoration: none;
+    color: #666;
+}
+
+.nav_head h6 {
+    text-align: center;
+    line-height: 50px;
+    color: #666;
+}
+
+.form_control {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    height: 50px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.form_control span {
+    width: 60px;
+    flex: none;
+    line-height: 50px;
+}
+
+.form_control input {
+    flex: auto;
+    border: none;
+    outline: none;
+}
+
+.form_control input::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+.form_control a {
+    line-height: 50px;
+    padding: 0 10px;
+    background-color: #11D183;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.form_control img {
+    height: 20px;
+    align-self: center;
+}
+
+.footer {
+    background-color: #eee;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.footer input {
+    border: 1px solid #11D183;
+    margin-right: 20px;
+}
+
+.footer>a {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #11D183;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    display: block;
+    border-radius: 5px;
+    text-decoration: none;
+}

@@ -1,0 +1,91 @@
+body {
+    display: flex;
+}
+
+.on {
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 20% 30% auto;
+    line-height: 50px;
+}
+
+.row input::-webkit-input-placeholder {
+    color: rgb(107, 107, 107);
+}
+
+.ag .input2 {
+    grid-area: 1 / 2 / span 1 / span 2;
+}
+
+.input1 {
+    text-align: right;
+}
+
+.left {
+    width: 75%;
+    box-sizing: border-box;
+}
+
+form {
+    text-align: left;
+}
+
+.left .text {
+    background-color: #D1EEEE;
+    font-size: 20px;
+    line-height: 60px;
+    padding-left: 40px;
+}
+
+.btn {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.right {
+    width: 25%;
+    float: right;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    text-align: center;
+}
+
+.dl,
+.dd {
+    margin: 0;
+    padding: 0;
+}
+
+.right div {
+    padding: 10px 20px;
+    background-color: #D1EEEE;
+}
+
+.right img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.dd {
+    text-align: center;
+}
+
+.left form,
+.right div {
+    border: 1px solid #A4D3EE;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}

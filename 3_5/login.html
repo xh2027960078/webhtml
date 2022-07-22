@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登陆页面</title>
+    <link rel="stylesheet" type="text/css" href="css\style.css">
+</head>
+
+<body>
+    <div class="on">
+        <div class="left">
+            <h1>会员注册</h1>
+            <form action="" onsubmit="return check()">
+                <div class="text">欢迎注册为旅行社股份有限公司官网会员！</div>
+                <ul class="row">
+                    <li class="input1">用户名:</li>
+                    <li class="input2">
+                        <input type="text" placeholder="请输入用户名" name="username">
+                    </li>
+                    <li class="input3"></li>
+                </ul>
+                <ul class="row">
+                    <li class="input1">真实姓名:</li>
+                    <li class="input2">
+                        <input type="text" name="realname">
+                    </li>
+                    <li class="input3"></li>
+                </ul>
+                <ul class="row">
+                    <li class="input1">手机号:</li>
+                    <li class="input2">
+                        <input type="text">
+                    </li>
+                    <li class="input3"></li>
+                </ul>
+                <ul class="row">
+                    <li class="input1">密码:</li>
+                    <li class="input2">
+                        <input type="text">
+                    </li>
+                    <li class="input3"></li>
+                </ul>
+                <ul class="row">
+                    <li class="input1">确认密码:</li>
+                    <li class="input2">
+                        <input type="text">
+                    </li>
+                    <li class="input3"></li>
+                </ul>
+                <ul class="row ca">
+                    <li class="input1">验证码:</li>
+                    <li class="input2">
+                        <input type="text">
+                        <button type="button">获取验证码</button>
+                    </li>
+                    <li class="input3"></li>
+                </ul>
+                <ul class="row ag">
+                    <li class="input1"></li>
+                    <li class="input2">
+                        <label>
+                            <input type="checkbox" >
+                            我已阅读并同意某某协议
+                        </label>
+                    </li>
+                </ul>
+                <div class="btn"><button>提交注册</button></div>
+            </form>
+
+        </div>
+        <div class="right">
+            <h2>爆款特价</h2>
+            <div>
+                <dl>
+                    <dt><img src="img\pic1.png" alt=""></dt>
+                    <dd><a href="#">大海游，特价等你来！</a></dd>
+                </dl>
+                <dl><dt><img src="img\pic2.png" alt=""></dt>
+                    <dd><a href="#">"泰"完美！</a></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let input = document.querySelector('[placeholder]');
+    input.onfocus = () => {
+        input.removeAttribute('placeholder');
+    }
+    input.onblur = () => {
+        input.setAttribute('placeholder', '请输入用户名');
+    }
+
+    function check() {
+        let username = document.querySelector('[name=username]');
+        let realname = document.querySelector('[name=realname]');
+
+
+        let usernamemsg = username.parentElement.nextElementSibling;
+        let realnamemsg = realname.parentElement.nextElementSibling;
+        /*英文字母开头，5位以上英文字母、数字或者下划线*/
+        let reg = /^[a-zA-Z]\w{4,}$/
+        if (!reg.test(username.value)) {
+            usernamemsg.innerHTML = '必须为英文字母开头、5位以上英文字母、数字或下划线组成';
+            return false;
+        } else {
+            usernamemsg.innerHTML = '验证通过';
+        }
+
+        /*纯中文或者英文，四位以上*/
+        reg = /^([\u4e00-\u9fa5]){4,}$|^([a-zA-Z]){4,}$/
+        if (!reg.test(realname.value)) {
+            realnamemsg.innerHTML = '必须为纯中文或者英文，四位以上';
+            return false;
+        } else {
+            realnamemsg.innerHTML = '验证通过';
+        }
+        return true;
+    }
+</script>
+
+</html>

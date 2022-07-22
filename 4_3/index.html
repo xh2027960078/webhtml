@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css\style.css" type="text/css" rel="stylesheet">
+    <title>首页</title>
+</head>
+
+<body>
+    <div id="app" @click="closeDialog">
+        <div class="navbar">
+            <a href="#" class="logo">
+                <img src="img\logo.png" alt="">
+            </a>
+            <span class="title">湖南信息职业技术学院选课系统</span>
+            <div class="nav_btn">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="carousel">
+            <div class="img_list">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="img\1.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img\2.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img\3.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="in_list">
+                <li>
+                    <a href="#"></a>
+                </li>
+                <li>
+                    <a href="#"></a>
+                </li>
+                <li>
+                    <a href="#"></a>
+                </li>
+            </ul>
+        </div>
+        <div class="select_list">
+            <h5 class="title">选课列表</h5>
+            <ul class="list">
+                <li>
+                    <a href="#" @click.stop="openDialog">
+                        <img src="img\学生选课.png" alt="">
+                        <span>学生选课</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img\学生退课.png" alt="">
+                        <span>学生退课</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img\个人中心.png" alt="">
+                        <span>个人中心</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="info">
+                <li class="title">官方信息</li>
+                <li class="notice">
+                    <a href="#">
+                        <img src="img\固定.png">
+                    </a>
+                </li>
+                <li class="stat">
+                    <div>当前选课统计</div>
+                    <div>课程栏目:<span>10个</span></div>
+                    <div>课程数量:<span>20门</span></div>
+                </li>
+                <li class="source">文字来源于2020 | 学校官网</li>
+                <li class="inline_num">在线人数<span>100人</span></li>
+            </ul>
+        </div>
+        <div class="dialog" ref="msg">进入选课页面</div>
+    </div>
+</body>
+<script src="js\vue.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        methods: {
+            openDialog() {
+                this.$refs.msg.style.display = 'block   ';
+            },
+            closeDialog() {
+                this.$refs.msg.style.display = 'none';
+            }
+        }
+    })
+</script>
+
+</html>
